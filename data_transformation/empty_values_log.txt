@@ -1,0 +1,256 @@
+===== Empty Values Before Interpolation ======
+datetime                           0
+dworshak_water_temp             2288
+dworshak_discharge               256
+dworshak_spill                   195
+asotin_creek_discharge          2231
+big_canyon_discharge           70655
+lapwai_creek_discharge          2092
+hells_canyon_dam_discharge    130503
+orofino_water_temp             71646
+orofino_discharge               6558
+peck_water_temp                69054
+peck_discharge                   669
+potlatch_creek_discharge        7003
+spalding_water_temp            65384
+spalding_discharge               778
+anatone_water_temp             14698
+anatone_discharge                863
+ahsahka_temp                      19
+ahsahka_humidity                  19
+cherrylane_temp                   19
+cherrylane_humidity               19
+spalding_temp                     19
+spalding_humidity                 19
+alpowa_temp                       19
+alpowa_humidity                   19
+lgr_temp                          19
+lgr_humidity                      19
+lgr_water_temp                 60135
+dtype: int64
+
+===== Empty Values After Interpolation ======
+datetime                          0
+dworshak_water_temp               0
+dworshak_discharge                0
+dworshak_spill                    0
+asotin_creek_discharge            8
+big_canyon_discharge          69768
+lapwai_creek_discharge            8
+hells_canyon_dam_discharge       24
+orofino_water_temp            46448
+orofino_discharge                 8
+peck_water_temp               66657
+peck_discharge                    8
+potlatch_creek_discharge          8
+spalding_water_temp           39032
+spalding_discharge                8
+anatone_water_temp            13720
+anatone_discharge                 8
+ahsahka_temp                      1
+ahsahka_humidity                  1
+cherrylane_temp                   1
+cherrylane_humidity               1
+spalding_temp                     1
+spalding_humidity                 1
+alpowa_temp                       1
+alpowa_humidity                   1
+lgr_temp                          1
+lgr_humidity                      1
+lgr_water_temp                    8
+dtype: int64
+
+===== Date of First Non-NA Value ======
+dworshak_water_temp          2009-03-31 23:00:00
+dworshak_discharge           2009-03-31 23:00:00
+dworshak_spill               2009-03-31 23:00:00
+asotin_creek_discharge       2009-04-01 07:00:00
+big_canyon_discharge         2017-03-16 23:00:00
+lapwai_creek_discharge       2009-04-01 07:00:00
+hells_canyon_dam_discharge   2009-03-31 23:00:00
+orofino_water_temp           2014-07-19 07:00:00
+orofino_discharge            2009-04-01 07:00:00
+peck_water_temp              2016-11-07 08:00:00
+peck_discharge               2009-04-01 07:00:00
+potlatch_creek_discharge     2009-04-01 07:00:00
+spalding_water_temp          2013-09-13 07:00:00
+spalding_discharge           2009-04-01 07:00:00
+anatone_water_temp           2009-04-01 07:00:00
+anatone_discharge            2009-04-01 07:00:00
+ahsahka_temp                 2009-04-01 00:00:00
+ahsahka_humidity             2009-04-01 00:00:00
+cherrylane_temp              2009-04-01 00:00:00
+cherrylane_humidity          2009-04-01 00:00:00
+spalding_temp                2009-04-01 00:00:00
+spalding_humidity            2009-04-01 00:00:00
+alpowa_temp                  2009-04-01 00:00:00
+alpowa_humidity              2009-04-01 00:00:00
+lgr_temp                     2009-04-01 00:00:00
+lgr_humidity                 2009-04-01 00:00:00
+lgr_water_temp               2009-04-01 07:00:00
+dtype: datetime64[ns]
+
+===== Empty Values After Date Range Minimization =====
+datetime                      0
+dworshak_water_temp           0
+dworshak_discharge            0
+dworshak_spill                0
+asotin_creek_discharge        0
+big_canyon_discharge          0
+lapwai_creek_discharge        0
+hells_canyon_dam_discharge    0
+orofino_water_temp            0
+orofino_discharge             0
+peck_water_temp               0
+peck_discharge                0
+potlatch_creek_discharge      0
+spalding_water_temp           0
+spalding_discharge            0
+anatone_water_temp            0
+anatone_discharge             0
+ahsahka_temp                  0
+ahsahka_humidity              0
+cherrylane_temp               0
+cherrylane_humidity           0
+spalding_temp                 0
+spalding_humidity             0
+alpowa_temp                   0
+alpowa_humidity               0
+lgr_temp                      0
+lgr_humidity                  0
+lgr_water_temp                0
+dtype: int64
+
+===== Empty Values After Interpolation ======
+datetime                          0
+dworshak_water_temp               0
+dworshak_discharge                0
+dworshak_spill                    0
+asotin_creek_discharge            8
+big_canyon_discharge          69768
+lapwai_creek_discharge            8
+hells_canyon_dam_discharge       24
+orofino_water_temp            46448
+orofino_discharge                 8
+peck_water_temp               66657
+peck_discharge                    8
+potlatch_creek_discharge          8
+spalding_water_temp           39032
+spalding_discharge                8
+anatone_water_temp            13720
+anatone_discharge                 8
+ahsahka_temp                      1
+ahsahka_humidity                  1
+cherrylane_temp                   1
+cherrylane_humidity               1
+spalding_temp                     1
+spalding_humidity                 1
+alpowa_temp                       1
+alpowa_humidity                   1
+lgr_temp                          1
+lgr_humidity                      1
+lgr_water_temp                    8
+dtype: int64
+
+===== Date of First Non-NA Value ======
+dworshak_water_temp          2009-03-31 23:00:00
+dworshak_discharge           2009-03-31 23:00:00
+dworshak_spill               2009-03-31 23:00:00
+asotin_creek_discharge       2009-04-01 07:00:00
+big_canyon_discharge         2017-03-16 23:00:00
+lapwai_creek_discharge       2009-04-01 07:00:00
+hells_canyon_dam_discharge   2009-03-31 23:00:00
+orofino_water_temp           2014-07-19 07:00:00
+orofino_discharge            2009-04-01 07:00:00
+peck_water_temp              2016-11-07 08:00:00
+peck_discharge               2009-04-01 07:00:00
+potlatch_creek_discharge     2009-04-01 07:00:00
+spalding_water_temp          2013-09-13 07:00:00
+spalding_discharge           2009-04-01 07:00:00
+anatone_water_temp           2009-04-01 07:00:00
+anatone_discharge            2009-04-01 07:00:00
+ahsahka_temp                 2009-04-01 00:00:00
+ahsahka_humidity             2009-04-01 00:00:00
+cherrylane_temp              2009-04-01 00:00:00
+cherrylane_humidity          2009-04-01 00:00:00
+spalding_temp                2009-04-01 00:00:00
+spalding_humidity            2009-04-01 00:00:00
+alpowa_temp                  2009-04-01 00:00:00
+alpowa_humidity              2009-04-01 00:00:00
+lgr_temp                     2009-04-01 00:00:00
+lgr_humidity                 2009-04-01 00:00:00
+lgr_water_temp               2009-04-01 07:00:00
+dtype: datetime64[ns]
+
+===== Empty Values After Date Range Minimization =====
+datetime                      0
+dworshak_water_temp           0
+dworshak_discharge            0
+dworshak_spill                0
+asotin_creek_discharge        0
+big_canyon_discharge          0
+lapwai_creek_discharge        0
+hells_canyon_dam_discharge    0
+orofino_water_temp            0
+orofino_discharge             0
+peck_water_temp               0
+peck_discharge                0
+potlatch_creek_discharge      0
+spalding_water_temp           0
+spalding_discharge            0
+anatone_water_temp            0
+anatone_discharge             0
+ahsahka_temp                  0
+ahsahka_humidity              0
+cherrylane_temp               0
+cherrylane_humidity           0
+spalding_temp                 0
+spalding_humidity             0
+alpowa_temp                   0
+alpowa_humidity               0
+lgr_temp                      0
+lgr_humidity                  0
+lgr_water_temp                0
+dtype: int64
+
+===== Empty Values After Interpolation ======
+datetime                   0
+dworshak_water_temp        0
+dworshak_discharge         0
+dworshak_spill             0
+asotin_creek_discharge     8
+                          ..
+anatone_discharge_t-6     14
+anatone_discharge_t-7     15
+anatone_discharge_t-8     16
+anatone_discharge_t-9     17
+anatone_discharge_t-10    18
+Length: 188, dtype: int64
+
+===== Date of First Non-NA Value ======
+dworshak_water_temp      2009-03-31 23:00:00
+dworshak_discharge       2009-03-31 23:00:00
+dworshak_spill           2009-03-31 23:00:00
+asotin_creek_discharge   2009-04-01 07:00:00
+big_canyon_discharge     2017-03-16 23:00:00
+                                 ...        
+anatone_discharge_t-6    2009-04-01 13:00:00
+anatone_discharge_t-7    2009-04-01 14:00:00
+anatone_discharge_t-8    2009-04-01 15:00:00
+anatone_discharge_t-9    2009-04-01 16:00:00
+anatone_discharge_t-10   2009-04-01 17:00:00
+Length: 187, dtype: datetime64[ns]
+
+===== Empty Values After Date Range Minimization =====
+datetime                  0
+dworshak_water_temp       0
+dworshak_discharge        0
+dworshak_spill            0
+asotin_creek_discharge    0
+                         ..
+anatone_discharge_t-6     0
+anatone_discharge_t-7     0
+anatone_discharge_t-8     0
+anatone_discharge_t-9     0
+anatone_discharge_t-10    0
+Length: 188, dtype: int64
