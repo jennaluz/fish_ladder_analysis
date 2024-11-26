@@ -254,3 +254,45 @@ anatone_discharge_t-8     0
 anatone_discharge_t-9     0
 anatone_discharge_t-10    0
 Length: 188, dtype: int64
+
+===== Empty Values After Interpolation ======
+datetime                   0
+dworshak_water_temp        0
+dworshak_discharge         0
+dworshak_spill             0
+asotin_creek_discharge     8
+                          ..
+anatone_discharge_t-6     14
+anatone_discharge_t-7     15
+anatone_discharge_t-8     16
+anatone_discharge_t-9     17
+anatone_discharge_t-10    18
+Length: 188, dtype: int64
+
+===== Date of First Non-NA Value ======
+dworshak_water_temp      2009-03-31 23:00:00
+dworshak_discharge       2009-03-31 23:00:00
+dworshak_spill           2009-03-31 23:00:00
+asotin_creek_discharge   2009-04-01 07:00:00
+big_canyon_discharge     2017-03-16 23:00:00
+                                 ...        
+anatone_discharge_t-6    2009-04-01 13:00:00
+anatone_discharge_t-7    2009-04-01 14:00:00
+anatone_discharge_t-8    2009-04-01 15:00:00
+anatone_discharge_t-9    2009-04-01 16:00:00
+anatone_discharge_t-10   2009-04-01 17:00:00
+Length: 187, dtype: datetime64[ns]
+
+===== Empty Values After Date Range Minimization =====
+datetime                  0
+dworshak_water_temp       0
+dworshak_discharge        0
+dworshak_spill            0
+asotin_creek_discharge    0
+                         ..
+anatone_discharge_t-6     0
+anatone_discharge_t-7     0
+anatone_discharge_t-8     0
+anatone_discharge_t-9     0
+anatone_discharge_t-10    0
+Length: 188, dtype: int64

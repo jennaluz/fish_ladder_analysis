@@ -53,6 +53,7 @@ def log_data_errors(dataframe):
 
 
 # Read in Data =================================================================
+print('Reading in data...')
 fish_ladder_data = pd.read_csv(
         'fish_ladder_data_original.csv',
         low_memory=False)
@@ -63,28 +64,14 @@ datetime_format = ':%Y-%m-%d %H::%M::%S+00::00:'
 fish_ladder_data['datetime'] = pd.to_datetime(fish_ladder_data['datetime'],
                                               format=datetime_format)
 
-print('Removing duplicated data...')
-#fish_ladder_data = log_data_errors(fish_ladder_data)
-#fish_ladder_data.to_csv('fish_ladder_data_no_duplicates.csv', index=False)
 
-#fish_ladder_data = pd.read_csv(
-#        'fish_ladder_data_no_duplicates.csv',
-#        low_memory=False)
-#
-## Strongly type numeric features
-#fish_ladder_data = fish_ladder_data.convert_dtypes(convert_floating=True)
-#
-## Extract datetime object
-#fish_ladder_data['datetime'] = pd.to_datetime(fish_ladder_data['datetime'])
-
-#fish_ladder_data = fish_ladder_data.drop_duplicates('datetime')
-
+# Remove Duplicates ============================================================
 # Remove duplicates by "merging" the columns
 # The data is grouped by duplicated datetime intervals
 # Duplicated rows are merged together, based on the first appearance
+print('Removing duplicated data...')
 fish_ladder_data = fish_ladder_data.groupby('datetime').agg('first').reset_index()
 log_data_errors(fish_ladder_data)
-print(fish_ladder_data.shape)
 
 
 # Convert Dworshak water temperature from Fahrenheit to Celsius ================
@@ -115,28 +102,12 @@ data = fish_ladder_data[['datetime'] + features + outcome]
 
 
 # Fill Missing Data ============================================================
-# Since not too much data is missing, interpolate the values
+# Resample at hour intervals to fill missing data
 print('Filling missing data...')
-#missing_data = pd.read_csv('missing_data_log.txt')
-#missing_data['datetime'] = pd.to_datetime(missing_data['datetime'])
-
-# Add missing rows with empty feature data
-#for _, row in missing_data.iterrows():
-#    new_row = pd.DataFrame({'datetime': [row['datetime']]})
-#    data = pd.concat([data, new_row], ignore_index=True)
-#
-## Resort rows
-## Log empy values
-#with open('empty_values_log.txt', 'w') as file:
-#    file.write('===== Empty Values Before Interpolation ======\n')
-#    file.write(f'{data.isna().sum()}')
-#
-#data.sort_values(by=['datetime'], ignore_index=True, inplace=True)
-
 data = data.set_index('datetime').resample('1h').first().reset_index() \
         .reindex(columns=data.columns)
 
-# Interpolate numeric rows
+# Since not too much data is missing, interpolate the values
 print('Interpolating data...')
 interpolated_data = data.select_dtypes(include='number') \
         .interpolate(limit_area='inside')
@@ -153,6 +124,8 @@ time_series_features = [
         'spalding_discharge', 'anatone_water_temp', 'anatone_discharge']
 
 print('Generating time series...')
+
+# For each feature, generate 10 different offset columns
 for feature in time_series_features:
     print(f'\t{feature}')
 
@@ -160,47 +133,6 @@ for feature in time_series_features:
         new_feature = \
                 pd.DataFrame({f'{feature}_t-{i}': data[feature].shift(i)})
         data = pd.concat([data, new_feature], axis=1)
-
-#for feature in time_series_features:
-#    print(f'\t{feature}')
-#    data.loc[:, feature + '_t-1'] = pd.NA
-#    data.loc[:, feature + '_t-2'] = pd.NA
-#    data.loc[:, feature + '_t-3'] = pd.NA
-#    data.loc[:, feature + '_t-4'] = pd.NA
-#    data.loc[:, feature + '_t-5'] = pd.NA
-#    data.loc[:, feature + '_t-6'] = pd.NA
-#
-#    data.loc[1, feature + '_t-1'] = data.loc[0, feature]
-#    data.loc[2, feature + '_t-1'] = data.loc[1, feature]
-#    data.loc[3, feature + '_t-1'] = data.loc[2, feature]
-#    data.loc[4, feature + '_t-1'] = data.loc[3, feature]
-#    data.loc[5, feature + '_t-1'] = data.loc[4, feature]
-#    data.loc[6, feature + '_t-1'] = data.loc[5, feature]
-#
-#    data.loc[2, feature + '_t-2'] = data.loc[0, feature]
-#    data.loc[3, feature + '_t-2'] = data.loc[1, feature]
-#    data.loc[4, feature + '_t-2'] = data.loc[2, feature]
-#    data.loc[5, feature + '_t-2'] = data.loc[3, feature]
-#    data.loc[6, feature + '_t-2'] = data.loc[4, feature]
-#
-#    data.loc[3, feature + '_t-3'] = data.loc[0, feature]
-#    data.loc[4, feature + '_t-3'] = data.loc[1, feature]
-#    data.loc[5, feature + '_t-3'] = data.loc[2, feature]
-#    data.loc[6, feature + '_t-3'] = data.loc[3, feature]
-#
-#    data.loc[4, feature + '_t-4'] = data.loc[0, feature]
-#    data.loc[5, feature + '_t-4'] = data.loc[1, feature]
-#    data.loc[6, feature + '_t-4'] = data.loc[2, feature]
-#
-#    data.loc[5, feature + '_t-5'] = data.loc[0, feature]
-#    data.loc[6, feature + '_t-5'] = data.loc[1, feature]
-#
-#    for i in range(6, data.shape[0]):
-#        data.loc[i, feature + '_t-1'] = data.loc[i - 1, feature]
-#        data.loc[i, feature + '_t-2'] = data.loc[i - 2, feature]
-#        data.loc[i, feature + '_t-3'] = data.loc[i - 3, feature]
-#        data.loc[i, feature + '_t-4'] = data.loc[i - 4, feature]
-#        data.loc[i, feature + '_t-5'] = data.loc[i - 5, feature]
 
 
 # Extract Data Range ===========================================================
